@@ -95,6 +95,10 @@
           <Private>False</Private>
           <Publicize>True</Publicize>
       </Reference>
+      <Reference Include="OculusStudios.Platform.Core">
+          <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\OculusStudios.Platform.Core.dll</HintPath>
+          <Private>False</Private>
+      </Reference>
       <Reference Include="mscorlib">
           <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\mscorlib.dll</HintPath>
           <Private>false</Private>
@@ -132,6 +136,10 @@
       </Reference>
       <Reference Include="UnityEngine.CoreModule">
           <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+          <Private>False</Private>
+      </Reference>
+      <Reference Include="UnityEngine.ImageConversionModule">
+          <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
           <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UI">

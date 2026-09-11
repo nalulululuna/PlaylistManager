@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using BeatSaberPlaylistsLib;
 using BeatSaberPlaylistsLib.Types;
+using PlaylistManager.Utilities;
 using UnityEngine;
 
 /*
@@ -63,7 +64,7 @@ namespace PlaylistManager.Types
                     {
                         var imageBytes = new byte[imageStream.Length];
                         imageStream.Read(imageBytes, 0, (int)imageStream.Length);
-                        coverImage._sprite = BeatSaberMarkupLanguage.Utilities.LoadSpriteRaw(imageBytes);
+                        coverImage._sprite = ImageUtils.LoadSpriteRaw(imageBytes);
                         if (coverImage._sprite != null)
                         {
                             coverImage.SpriteWasLoaded = true;

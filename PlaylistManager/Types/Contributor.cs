@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using BeatSaberMarkupLanguage.Attributes;
 using HMUI;
+using PlaylistManager.Utilities;
 
 namespace PlaylistManager.Types
 {
@@ -57,7 +58,7 @@ namespace PlaylistManager.Types
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(name)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(role)));
-            iconImage.sprite = BeatSaberMarkupLanguage.Utilities.FindSpriteInAssembly(iconPath);
+            iconImage.sprite = ImageUtils.FindSpriteInAssembly(iconPath);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(YoutubeActive)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TwitchActive)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(GithubActive)));
