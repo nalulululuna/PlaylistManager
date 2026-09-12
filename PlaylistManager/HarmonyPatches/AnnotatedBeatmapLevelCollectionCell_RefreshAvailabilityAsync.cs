@@ -10,14 +10,14 @@ using PlaylistManager.Utilities;
 
 namespace PlaylistManager.HarmonyPatches
 {
-    [HarmonyPatch(typeof(AnnotatedBeatmapLevelCollectionCell), nameof(AnnotatedBeatmapLevelCollectionCell.RefreshAvailabilityAsync))]
+    [HarmonyPatch(typeof(AnnotatedBeatmapLevelCollectionCell), "SetDownloadIconVisible")]
     internal class AnnotatedBeatmapLevelCollectionCell_RefreshAvailabilityAsync
     {
-        private static void Postfix(AnnotatedBeatmapLevelCollectionCell __instance)
+        private static void Prefix(AnnotatedBeatmapLevelCollectionCell __instance, ref bool visible)
         {
             if (__instance._beatmapLevelPack is PlaylistLevelPack playlistLevelPack)
             {
-                __instance.SetDownloadIconVisible(PluginConfig.Instance.ShowDownloadIcon && PlaylistLibUtils.GetMissingSongs(playlistLevelPack.playlist).Count > 0);
+                visible = PluginConfig.Instance.ShowDownloadIcon && PlaylistLibUtils.GetMissingSongs(playlistLevelPack.playlist).Count > 0;
             }
         }
     }
